@@ -1,0 +1,370 @@
+import { Company } from './types';
+
+export const COMPANIES: Company[] = [
+  {
+    ticker: 'ADM',
+    name: 'Archer-Daniels-Midland',
+    sector: 'food-manufacturer',
+    country: 'US',
+    description:
+      'One of the world\'s largest agricultural processors and food ingredient providers, operating across oilseeds, corn processing, and nutrition segments.',
+    esg: {
+      overall: 58,
+      environmental: 52,
+      social: 61,
+      governance: 62,
+      rating: 'BBB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 6.2,
+      scope2: 2.1,
+      scope3: 38.5,
+      carbonIntensity: 57.3,
+      renewableEnergy: 18,
+      netZeroTarget: 2050,
+      cdpScore: 'B',
+    },
+  },
+  {
+    ticker: 'NSRGY',
+    name: 'Nestlé',
+    sector: 'food-manufacturer',
+    country: 'CH',
+    description:
+      'The world\'s largest food and beverage company, with brands spanning coffee, dairy, nutrition, and pet food across 186 countries.',
+    esg: {
+      overall: 74,
+      environmental: 72,
+      social: 76,
+      governance: 73,
+      rating: 'AA',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 3.8,
+      scope2: 1.2,
+      scope3: 92.4,
+      carbonIntensity: 38.1,
+      renewableEnergy: 52,
+      netZeroTarget: 2050,
+      cdpScore: 'A-',
+    },
+  },
+  {
+    ticker: 'UL',
+    name: 'Unilever',
+    sector: 'food-manufacturer',
+    country: 'GB',
+    description:
+      'A global consumer goods company with a portfolio of food, home care, and personal care brands, known for its sustainability commitments.',
+    esg: {
+      overall: 79,
+      environmental: 81,
+      social: 78,
+      governance: 77,
+      rating: 'AA',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 2.1,
+      scope2: 0.9,
+      scope3: 57.8,
+      carbonIntensity: 28.4,
+      renewableEnergy: 68,
+      netZeroTarget: 2039,
+      cdpScore: 'A',
+    },
+  },
+  {
+    ticker: 'GIS',
+    name: 'General Mills',
+    sector: 'food-manufacturer',
+    country: 'US',
+    description:
+      'A leading global food company that manufactures and markets branded consumer foods, including Cheerios, Häagen-Dazs, and Nature Valley.',
+    esg: {
+      overall: 63,
+      environmental: 60,
+      social: 65,
+      governance: 64,
+      rating: 'BBB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 1.4,
+      scope2: 0.8,
+      scope3: 22.1,
+      carbonIntensity: 41.2,
+      renewableEnergy: 35,
+      netZeroTarget: 2050,
+      cdpScore: 'B',
+    },
+  },
+  {
+    ticker: 'TSN',
+    name: 'Tyson Foods',
+    sector: 'food-manufacturer',
+    country: 'US',
+    description:
+      'One of the world\'s largest food companies, producing approximately 20% of US beef, pork, and chicken, with significant environmental footprint.',
+    esg: {
+      overall: 38,
+      environmental: 28,
+      social: 44,
+      governance: 42,
+      rating: 'BB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 8.7,
+      scope2: 2.3,
+      scope3: 54.6,
+      carbonIntensity: 98.4,
+      renewableEnergy: 12,
+      netZeroTarget: 2050,
+      cdpScore: 'C',
+    },
+  },
+  {
+    ticker: 'CAG',
+    name: 'Conagra Brands',
+    sector: 'food-manufacturer',
+    country: 'US',
+    description:
+      'A leading branded food company with a portfolio of iconic brands including Healthy Choice, Birds Eye, and Duncan Hines.',
+    esg: {
+      overall: 55,
+      environmental: 51,
+      social: 57,
+      governance: 58,
+      rating: 'BBB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 1.1,
+      scope2: 0.7,
+      scope3: 18.3,
+      carbonIntensity: 49.7,
+      renewableEnergy: 22,
+      netZeroTarget: 2050,
+      cdpScore: 'B-',
+    },
+  },
+  {
+    ticker: 'CTVA',
+    name: 'Corteva',
+    sector: 'ag-chemical',
+    country: 'US',
+    description:
+      'A leading global provider of seed and crop protection products, spun off from DowDuPont in 2019, focused on sustainable agriculture.',
+    esg: {
+      overall: 61,
+      environmental: 58,
+      social: 63,
+      governance: 62,
+      rating: 'BBB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 1.8,
+      scope2: 0.6,
+      scope3: 12.4,
+      carbonIntensity: 44.6,
+      renewableEnergy: 28,
+      netZeroTarget: 2050,
+      cdpScore: 'B',
+    },
+  },
+  {
+    ticker: 'BAYRY',
+    name: 'Bayer AG',
+    sector: 'ag-chemical',
+    country: 'DE',
+    description:
+      'A life science company with operations in pharmaceuticals and agriculture, including the Crop Science division after acquiring Monsanto in 2018.',
+    esg: {
+      overall: 57,
+      environmental: 54,
+      social: 59,
+      governance: 56,
+      rating: 'BBB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 3.1,
+      scope2: 1.4,
+      scope3: 28.7,
+      carbonIntensity: 52.1,
+      renewableEnergy: 34,
+      netZeroTarget: 2050,
+      cdpScore: 'B',
+    },
+  },
+  {
+    ticker: 'FMC',
+    name: 'FMC Corporation',
+    sector: 'ag-chemical',
+    country: 'US',
+    description:
+      'An agricultural sciences company providing crop protection, plant health, and pest & turf management products for farmers worldwide.',
+    esg: {
+      overall: 64,
+      environmental: 62,
+      social: 65,
+      governance: 65,
+      rating: 'BBB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 0.4,
+      scope2: 0.2,
+      scope3: 5.8,
+      carbonIntensity: 35.2,
+      renewableEnergy: 31,
+      netZeroTarget: 2035,
+      cdpScore: 'B',
+    },
+  },
+  {
+    ticker: 'NTR',
+    name: 'Nutrien',
+    sector: 'ag-chemical',
+    country: 'CA',
+    description:
+      'The world\'s largest producer of potash and a major producer of nitrogen and phosphate fertilizers, serving growers across six continents.',
+    esg: {
+      overall: 52,
+      environmental: 45,
+      social: 56,
+      governance: 55,
+      rating: 'BB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 12.4,
+      scope2: 3.1,
+      scope3: 31.2,
+      carbonIntensity: 72.8,
+      renewableEnergy: 16,
+      netZeroTarget: 2050,
+      cdpScore: 'C',
+    },
+  },
+  {
+    ticker: 'CF',
+    name: 'CF Industries',
+    sector: 'ag-chemical',
+    country: 'US',
+    description:
+      'A leading global manufacturer and distributor of hydrogen and nitrogen products for energy, fertilizer, emissions abatement, and other applications.',
+    esg: {
+      overall: 44,
+      environmental: 36,
+      social: 49,
+      governance: 47,
+      rating: 'BB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 11.8,
+      scope2: 1.9,
+      scope3: 19.4,
+      carbonIntensity: 118.3,
+      renewableEnergy: 8,
+      netZeroTarget: 2050,
+      cdpScore: 'C',
+    },
+  },
+  {
+    ticker: 'BG',
+    name: 'Bunge',
+    sector: 'commodity-trader',
+    country: 'US',
+    description:
+      'A leading global agribusiness and food company operating along the entire grain and oilseed supply chain, from farm to consumer.',
+    esg: {
+      overall: 49,
+      environmental: 44,
+      social: 52,
+      governance: 51,
+      rating: 'BB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 4.9,
+      scope2: 1.8,
+      scope3: 87.3,
+      carbonIntensity: 63.4,
+      renewableEnergy: 21,
+      netZeroTarget: 2050,
+      cdpScore: 'B-',
+    },
+  },
+  {
+    ticker: 'GLNCY',
+    name: 'Glencore',
+    sector: 'commodity-trader',
+    country: 'CH',
+    description:
+      'One of the world\'s largest commodity trading and mining companies, with significant exposure to agricultural products through its trading operations.',
+    esg: {
+      overall: 31,
+      environmental: 24,
+      social: 35,
+      governance: 34,
+      rating: 'B',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 36.8,
+      scope2: 5.2,
+      scope3: 148.6,
+      carbonIntensity: 142.7,
+      renewableEnergy: 6,
+      netZeroTarget: 2050,
+      cdpScore: 'D',
+    },
+  },
+  {
+    ticker: 'MOS',
+    name: 'Mosaic Company',
+    sector: 'commodity-trader',
+    country: 'US',
+    description:
+      'The world\'s largest integrated producer of concentrated phosphate and potash, supplying fertilizers and feed ingredients to agricultural markets.',
+    esg: {
+      overall: 46,
+      environmental: 39,
+      social: 50,
+      governance: 49,
+      rating: 'BB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 5.6,
+      scope2: 2.4,
+      scope3: 24.8,
+      carbonIntensity: 84.1,
+      renewableEnergy: 14,
+      netZeroTarget: 2040,
+      cdpScore: 'C',
+    },
+  },
+];
+
+export const TICKERS = COMPANIES.map((c) => c.ticker);
+
+export function getCompany(ticker: string): Company | undefined {
+  return COMPANIES.find((c) => c.ticker === ticker.toUpperCase());
+}
+
+export function getCompaniesBySector(sector: Company['sector']): Company[] {
+  return COMPANIES.filter((c) => c.sector === sector);
+}
+
+export const SECTOR_LABELS: Record<Company['sector'], string> = {
+  'food-manufacturer': 'Food Manufacturer',
+  'ag-chemical': 'Ag Chemical',
+  'commodity-trader': 'Commodity Trader',
+};
