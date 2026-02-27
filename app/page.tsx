@@ -1,5 +1,4 @@
 import { CompanyGrid } from '@/components/dashboard/CompanyGrid';
-import { ESGLeaderboard } from '@/components/dashboard/ESGLeaderboard';
 
 export default function DashboardPage() {
   return (
@@ -13,8 +12,6 @@ export default function DashboardPage() {
       </div>
 
       <CompanyGrid />
-
-      <ESGLeaderboard />
     </div>
   );
 }

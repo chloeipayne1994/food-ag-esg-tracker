@@ -70,12 +70,12 @@ export async function GET(request: NextRequest) {
 
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
-    max_tokens: 5000,
+    max_tokens: 6000,
     messages: [
       {
         role: 'user',
         content: `You are a financial analyst. For each company below, produce two pieces of analysis:
-1. "commentary": Up to 3 sentences covering profitability, revenue scale, and notable momentum or concerns, plus a final sentence on the likely reasons behind the stock's current performance.
+1. "commentary": Exactly 1 sentence covering the most notable aspect of stock performance and the likely reason behind it.
 2. "climateImpact": Exactly 1 sentence on how climate change has specifically impacted this company's TTM financial performance — consider physical risks (weather, supply chain), transition risks (carbon costs, regulation), commodity price volatility driven by climate, and any revenue opportunities from sustainability trends.
 
 Reply with JSON only, as an array: [{"ticker":"...","commentary":"...","climateImpact":"..."}]
@@ -88,8 +88,9 @@ ${companySummaries}`,
   const raw = message.content[0].type === 'text' ? message.content[0].text : '[]';
 
   function toOneSentence(text: string): string {
-    const sentences = text.match(/[^.!?]+[.!?]+/g) ?? [text];
-    return sentences[0].trim();
+    // Split only on punctuation followed by whitespace + capital letter (true sentence boundaries)
+    const match = text.match(/^.+?[.!?](?=\s+[A-Z]|$)/);
+    return (match ? match[0] : text).trim();
   }
 
   let parsed: CompanyCommentary[];
@@ -99,9 +100,11 @@ ${companySummaries}`,
     const raw_parsed = JSON.parse(clean);
     parsed = raw_parsed.map((item: CompanyCommentary) => ({
       ...item,
+      commentary: toOneSentence(item.commentary),
       climateImpact: toOneSentence(item.climateImpact),
     }));
-  } catch {
+  } catch (e) {
+    console.error('[commentary] JSON parse failed. Stop_reason:', message.stop_reason, 'Raw (last 200):', raw.slice(-200), 'Error:', e);
     parsed = companies.map((c) => ({ ticker: c.ticker, commentary: 'Commentary unavailable.', climateImpact: 'Data unavailable.' }));
   }
 
