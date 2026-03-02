@@ -17,6 +17,7 @@ const TABS: { value: FilterValue; label: string }[] = [
   { value: 'commodity-trader', label: 'Commodity Traders' },
   { value: 'seeds-genetics', label: 'Seeds & Genetics' },
   { value: 'animal-feed', label: 'Animal Feed' },
+  { value: 'fertilizers', label: 'Fertilizers' },
 ];
 
 export function SectorFilter({ value, onChange }: SectorFilterProps) {

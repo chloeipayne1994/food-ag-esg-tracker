@@ -479,7 +479,7 @@ export const COMPANIES: Company[] = [
   {
     ticker: 'NTR',
     name: 'Nutrien',
-    sector: 'ag-chemical',
+    sector: 'fertilizers',
     country: 'CA',
     description:
       'The world\'s largest producer of potash and a major producer of nitrogen and phosphate fertilizers, serving growers across six continents.',
@@ -504,7 +504,7 @@ export const COMPANIES: Company[] = [
   {
     ticker: 'CF',
     name: 'CF Industries',
-    sector: 'ag-chemical',
+    sector: 'fertilizers',
     country: 'US',
     description:
       'A leading global manufacturer and distributor of hydrogen and nitrogen products for energy, fertilizer, emissions abatement, and other applications.',
@@ -679,7 +679,7 @@ export const COMPANIES: Company[] = [
   {
     ticker: 'MOS',
     name: 'Mosaic Company',
-    sector: 'commodity-trader',
+    sector: 'fertilizers',
     country: 'US',
     description:
       'The world\'s largest integrated producer of concentrated phosphate and potash, supplying fertilizers and feed ingredients to agricultural markets.',
@@ -699,6 +699,108 @@ export const COMPANIES: Company[] = [
       renewableEnergy: 14,
       netZeroTarget: 2040,
       cdpScore: 'C',
+    },
+  },
+
+  // Fertilizers (new companies — NTR, MOS, CF moved from other sectors above)
+  {
+    ticker: 'YARIY',
+    name: 'Yara International',
+    sector: 'fertilizers',
+    country: 'NO',
+    description:
+      'The world\'s largest nitrogen fertilizer producer, headquartered in Norway, supplying crop nutrition products and digital farming tools to farmers across more than 60 countries.',
+    esg: {
+      overall: 71,
+      environmental: 70,
+      social: 72,
+      governance: 72,
+      rating: 'AA',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 14.2,
+      scope2: 2.8,
+      scope3: 48.6,
+      carbonIntensity: 95.4,
+      renewableEnergy: 38,
+      netZeroTarget: 2050,
+      cdpScore: 'A-',
+    },
+  },
+  {
+    ticker: 'ICL',
+    name: 'ICL Group',
+    sector: 'fertilizers',
+    country: 'IL',
+    description:
+      'An Israeli global specialty minerals company and one of the world\'s largest producers of potash and phosphate fertilizers, with operations spanning mining, chemistry, and specialty agriculture solutions.',
+    esg: {
+      overall: 58,
+      environmental: 54,
+      social: 60,
+      governance: 59,
+      rating: 'BBB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 3.6,
+      scope2: 1.8,
+      scope3: 18.4,
+      carbonIntensity: 46.2,
+      renewableEnergy: 24,
+      netZeroTarget: 2050,
+      cdpScore: 'B',
+    },
+  },
+  {
+    ticker: 'KPLUY',
+    name: 'K+S AG',
+    sector: 'fertilizers',
+    country: 'DE',
+    description:
+      'A German mining company and leading European producer of potash and magnesium fertilizers, operating mines in Germany and Canada and supplying specialty fertilizers and industrial salts globally.',
+    esg: {
+      overall: 55,
+      environmental: 50,
+      social: 58,
+      governance: 57,
+      rating: 'BBB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 2.9,
+      scope2: 1.4,
+      scope3: 12.7,
+      carbonIntensity: 62.8,
+      renewableEnergy: 29,
+      netZeroTarget: 2050,
+      cdpScore: 'B-',
+    },
+  },
+  {
+    ticker: 'OCPGF',
+    name: 'OCP Group',
+    sector: 'fertilizers',
+    country: 'MA',
+    description:
+      'A Moroccan state-owned enterprise and the world\'s largest exporter of phosphate rock and phosphate-based fertilizers, controlling around 70% of global phosphate reserves and supplying over 180 countries.',
+    esg: {
+      overall: 52,
+      environmental: 48,
+      social: 55,
+      governance: 53,
+      rating: 'BBB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 5.8,
+      scope2: 2.2,
+      scope3: 24.1,
+      carbonIntensity: 57.3,
+      renewableEnergy: 32,
+      netZeroTarget: 2040,
+      cdpScore: 'B',
     },
   },
 
@@ -971,4 +1073,5 @@ export const SECTOR_LABELS: Record<Company['sector'], string> = {
   'commodity-trader': 'Commodity Trader',
   'seeds-genetics': 'Seeds & Genetics',
   'animal-feed': 'Animal Feed',
+  'fertilizers': 'Fertilizers',
 };
