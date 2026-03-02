@@ -18,6 +18,7 @@ const TABS: { value: FilterValue; label: string }[] = [
   { value: 'seeds-genetics', label: 'Seeds & Genetics' },
   { value: 'animal-feed', label: 'Animal Feed' },
   { value: 'fertilizers', label: 'Fertilizers' },
+  { value: 'cold-chain', label: 'Cold Chain' },
 ];
 
 export function SectorFilter({ value, onChange }: SectorFilterProps) {

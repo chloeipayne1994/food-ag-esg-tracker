@@ -1,4 +1,4 @@
-export type Sector = 'food-manufacturer' | 'ag-chemical' | 'commodity-trader' | 'seeds-genetics' | 'animal-feed' | 'fertilizers';
+export type Sector = 'food-manufacturer' | 'ag-chemical' | 'commodity-trader' | 'seeds-genetics' | 'animal-feed' | 'fertilizers' | 'cold-chain';
 export type ESGRating = 'AAA' | 'AA' | 'A' | 'BBB' | 'BB' | 'B' | 'CCC';
 export type CDPScore = 'A' | 'A-' | 'B' | 'B-' | 'C' | 'D';
 

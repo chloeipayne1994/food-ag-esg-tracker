@@ -1055,6 +1055,58 @@ export const COMPANIES: Company[] = [
       cdpScore: 'B',
     },
   },
+
+  // Cold Chain
+  {
+    ticker: 'LINE',
+    name: 'Lineage',
+    sector: 'cold-chain',
+    country: 'US',
+    description:
+      'The world\'s largest temperature-controlled warehouse REIT, operating over 480 facilities and 3 billion cubic feet of capacity across 19 countries, providing cold storage and logistics for food manufacturers, retailers, and distributors.',
+    esg: {
+      overall: 61,
+      environmental: 58,
+      social: 62,
+      governance: 63,
+      rating: 'BBB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 1.2,
+      scope2: 3.8,
+      scope3: 9.4,
+      carbonIntensity: 71.6,
+      renewableEnergy: 21,
+      netZeroTarget: 2040,
+      cdpScore: 'B',
+    },
+  },
+  {
+    ticker: 'COLD',
+    name: 'Americold Realty Trust',
+    sector: 'cold-chain',
+    country: 'US',
+    description:
+      'A NYSE-listed REIT and the world\'s second-largest temperature-controlled warehousing and logistics provider, operating over 240 facilities globally and serving major food companies, retailers, and foodservice operators.',
+    esg: {
+      overall: 58,
+      environmental: 55,
+      social: 59,
+      governance: 60,
+      rating: 'BBB',
+      lastUpdated: '2024-09-01',
+    },
+    climate: {
+      scope1: 0.8,
+      scope2: 2.6,
+      scope3: 6.7,
+      carbonIntensity: 96.3,
+      renewableEnergy: 16,
+      netZeroTarget: 2050,
+      cdpScore: 'B-',
+    },
+  },
 ];
 
 export const TICKERS = COMPANIES.map((c) => c.ticker);
@@ -1074,4 +1126,5 @@ export const SECTOR_LABELS: Record<Company['sector'], string> = {
   'seeds-genetics': 'Seeds & Genetics',
   'animal-feed': 'Animal Feed',
   'fertilizers': 'Fertilizers',
+  'cold-chain': 'Cold Chain',
 };
