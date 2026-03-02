@@ -17,7 +17,7 @@ import { Badge } from '@/components/ui/badge';
 import { SectorFilter } from './SectorFilter';
 
 type FilterValue = 'all' | Sector;
-type SortField = 'marketCap' | 'ttmRevenue' | 'ttmProfitMargin';
+type SortField = 'marketCap' | 'ttmRevenue' | 'ttmProfitMargin' | 'country';
 type SortDir = 'asc' | 'desc';
 
 function formatRevenue(value: number): string {
@@ -94,7 +94,7 @@ export function CompanyGrid() {
       setSortDir((d) => (d === 'desc' ? 'asc' : 'desc'));
     } else {
       setSortField(field);
-      setSortDir('desc');
+      setSortDir(field === 'country' ? 'asc' : 'desc');
     }
   }
 
@@ -102,6 +102,11 @@ export function CompanyGrid() {
 
   const filtered = sortField
     ? [...base].sort((a, b) => {
+        if (sortField === 'country') {
+          const aName = COUNTRY_NAMES[a.country] ?? a.country;
+          const bName = COUNTRY_NAMES[b.country] ?? b.country;
+          return sortDir === 'asc' ? aName.localeCompare(bName) : bName.localeCompare(aName);
+        }
         let aVal: number | null | undefined;
         let bVal: number | null | undefined;
         if (sortField === 'marketCap') {
@@ -133,7 +138,9 @@ export function CompanyGrid() {
               <TableRow>
                 <TableHead className="w-36">Company</TableHead>
                 <TableHead>Sector</TableHead>
-                <TableHead>HQ Country</TableHead>
+                <TableHead className="cursor-pointer select-none hover:text-foreground" onClick={() => handleSort('country')}>
+                  HQ Country<SortIcon field="country" sortField={sortField} sortDir={sortDir} />
+                </TableHead>
                 <TableHead className="text-right cursor-pointer select-none hover:text-foreground" onClick={() => handleSort('marketCap')}>
                   Market Cap<SortIcon field="marketCap" sortField={sortField} sortDir={sortDir} />
                 </TableHead>
