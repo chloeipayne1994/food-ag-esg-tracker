@@ -701,7 +701,6 @@ export const COMPANIES: Company[] = [
       cdpScore: 'C',
     },
   },
-];
 
   // Animal Feed
   {
