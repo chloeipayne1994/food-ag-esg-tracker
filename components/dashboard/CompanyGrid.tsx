@@ -37,7 +37,7 @@ function formatMarketCap(value: number): string {
 function SkeletonRow() {
   return (
     <TableRow className="animate-pulse">
-      {Array.from({ length: 7 }).map((_, i) => (
+      {Array.from({ length: 8 }).map((_, i) => (
         <TableCell key={i}>
           <div className="h-4 rounded bg-muted w-16" />
         </TableCell>
@@ -48,6 +48,17 @@ function SkeletonRow() {
 
 function CommentarySkeleton() {
   return <div className="h-4 rounded bg-muted animate-pulse w-48" />;
+}
+
+const COUNTRY_NAMES: Record<string, string> = {
+  US: 'United States', CH: 'Switzerland', GB: 'United Kingdom', FR: 'France',
+  DE: 'Germany', BE: 'Belgium', CA: 'Canada', NO: 'Norway', IL: 'Israel',
+  NL: 'Netherlands', MA: 'Morocco', TH: 'Thailand', CN: 'China',
+  SG: 'Singapore', JP: 'Japan', BR: 'Brazil',
+};
+
+function getFlagEmoji(code: string): string {
+  return code.toUpperCase().split('').map(c => String.fromCodePoint(127397 + c.charCodeAt(0))).join('');
 }
 
 function SortIcon({ field, sortField, sortDir }: { field: SortField; sortField: SortField | null; sortDir: SortDir }) {
@@ -122,6 +133,7 @@ export function CompanyGrid() {
               <TableRow>
                 <TableHead className="w-36">Company</TableHead>
                 <TableHead>Sector</TableHead>
+                <TableHead>HQ Country</TableHead>
                 <TableHead className="text-right cursor-pointer select-none hover:text-foreground" onClick={() => handleSort('marketCap')}>
                   Market Cap<SortIcon field="marketCap" sortField={sortField} sortDir={sortDir} />
                 </TableHead>
@@ -165,6 +177,10 @@ export function CompanyGrid() {
                           <Badge variant="secondary" className="text-xs whitespace-nowrap">
                             {SECTOR_LABELS[company.sector]}
                           </Badge>
+                        </TableCell>
+                        <TableCell className="text-sm text-muted-foreground whitespace-nowrap">
+                          {getFlagEmoji(company.country)}{' '}
+                          {COUNTRY_NAMES[company.country] ?? company.country}
                         </TableCell>
                         <TableCell className="text-right tabular-nums text-sm text-muted-foreground">
                           {q ? formatMarketCap(q.marketCap) : '—'}
